@@ -1,0 +1,3 @@
+[submodule "farstream"]
+	path = farstream
+	url = git://git.collabora.co.uk/git/farstream.git
