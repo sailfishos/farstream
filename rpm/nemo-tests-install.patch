@@ -1,0 +1,17 @@
+diff -Naur farstream-0.1.2/tests/check/Makefile.am farstream-0.1.2-nemo-tests-install/tests/check/Makefile.am
+--- farstream-0.1.2/tests/check/Makefile.am	2011-12-05 20:19:49.000000000 +0000
++++ farstream-0.1.2-nemo-tests-install/tests/check/Makefile.am	2013-04-30 12:06:20.364110641 +0000
+@@ -173,3 +173,13 @@
+ 
+ elements_funnel_CFLAGS = $(AM_CFLAGS)
+ elements_funnel_SOURCES = elements/funnel.c
++
++nemotestsbindir = /opt/tests/farstream/bin
++nobase_nemotestsbin_PROGRAMS = $(check_PROGRAMS)
++
++farstream-tests.list:
++	$(AM_V_GEN)echo $(check_PROGRAMS) > $@
++
++nemotestsdatadir = /opt/tests/farstream/data
++nobase_nemotestsdata_DATA = $(EXTRA_DIST) farstream-tests.list
++
