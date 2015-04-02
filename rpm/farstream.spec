@@ -11,8 +11,8 @@ Source2:        mktests.sh
 Patch0:         nemo-tests-install.patch
 BuildRequires:  python
 BuildRequires:  pkgconfig(nice) >= 0.1.0
-BuildRequires:  pkgconfig(gstreamer-0.10)
-BuildRequires:  pkgconfig(gstreamer-plugins-base-0.10)
+BuildRequires:  pkgconfig(gstreamer-1.0)
+BuildRequires:  pkgconfig(gstreamer-plugins-base-1.0)
 
 %description
 A collection of GStreamer modules and libraries for video conferencing applications
@@ -69,12 +69,12 @@ install -m 0644 tests/tests.xml $RPM_BUILD_ROOT/opt/tests/%{name}/tests.xml
 %{_libdir}/%{name}-0.1/libnice-transmitter.so
 %{_libdir}/%{name}-0.1/librawudp-transmitter.so
 %{_libdir}/%{name}-0.1/libshm-transmitter.so
-%{_libdir}/gstreamer-0.10/libfsfunnel.so
-%{_libdir}/gstreamer-0.10/libfsmsnconference.so
-%{_libdir}/gstreamer-0.10/libfsrawconference.so
-%{_libdir}/gstreamer-0.10/libfsrtcpfilter.so
-%{_libdir}/gstreamer-0.10/libfsrtpconference.so
-%{_libdir}/gstreamer-0.10/libfsvideoanyrate.so
+%{_libdir}/gstreamer-1.0/libfsfunnel.so
+%{_libdir}/gstreamer-1.0/libfsmsnconference.so
+%{_libdir}/gstreamer-1.0/libfsrawconference.so
+%{_libdir}/gstreamer-1.0/libfsrtcpfilter.so
+%{_libdir}/gstreamer-1.0/libfsrtpconference.so
+%{_libdir}/gstreamer-1.0/libfsvideoanyrate.so
 %dir %{_datadir}/%{name}
 %dir %{_datadir}/%{name}/0.1
 %dir %{_datadir}/%{name}/0.1/fsrtpconference
