@@ -64,30 +64,22 @@ install -m 0644 tests/tests.xml $RPM_BUILD_ROOT/opt/tests/%{name}/tests.xml
 %defattr(-,root,root,-)
 %doc COPYING NEWS AUTHORS
 %{_libdir}/*.so.*
-%dir %{_libdir}/%{name}-0.1
-%{_libdir}/%{name}-0.1/libmulticast-transmitter.so
-%{_libdir}/%{name}-0.1/libnice-transmitter.so
-%{_libdir}/%{name}-0.1/librawudp-transmitter.so
-%{_libdir}/%{name}-0.1/libshm-transmitter.so
-%{_libdir}/gstreamer-1.0/libfsfunnel.so
-%{_libdir}/gstreamer-1.0/libfsmsnconference.so
-%{_libdir}/gstreamer-1.0/libfsrawconference.so
-%{_libdir}/gstreamer-1.0/libfsrtcpfilter.so
-%{_libdir}/gstreamer-1.0/libfsrtpconference.so
-%{_libdir}/gstreamer-1.0/libfsvideoanyrate.so
+%dir %{_libdir}/%{name}-0.2
+%{_libdir}/%{name}-0.2/*.so
+%{_libdir}/gstreamer-1.0/*.so
 %dir %{_datadir}/%{name}
-%dir %{_datadir}/%{name}/0.1
-%dir %{_datadir}/%{name}/0.1/fsrtpconference
-%dir %{_datadir}/%{name}/0.1/fsrawconference
-%{_datadir}/%{name}/0.1/fsrtpconference/default-codec-preferences
-%{_datadir}/%{name}/0.1/fsrtpconference/default-element-properties
-%{_datadir}/%{name}/0.1/fsrawconference/default-element-properties
+%dir %{_datadir}/%{name}/0.2
+%dir %{_datadir}/%{name}/0.2/fsrtpconference
+%dir %{_datadir}/%{name}/0.2/fsrawconference
+%{_datadir}/%{name}/0.2/fsrtpconference/default-codec-preferences
+%{_datadir}/%{name}/0.2/fsrtpconference/default-element-properties
+%{_datadir}/%{name}/0.2/fsrawconference/default-element-properties
 
 %files devel
 %defattr(-,root,root,-)
-%{_libdir}/libfarstream-0.1.so
-%{_libdir}/pkgconfig/%{name}-0.1.pc
-%{_includedir}/%{name}-0.1/%{name}/
+%{_libdir}/libfarstream-0.2.so
+%{_libdir}/pkgconfig/%{name}-0.2.pc
+%{_includedir}/%{name}-0.2/%{name}/
 %if 0%{?with_docs}
 %{_datadir}/gtk-doc/html/%{name}-libs-0.10/
 %{_datadir}/gtk-doc/html/%{name}-plugins-0.1/
