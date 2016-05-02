@@ -1,10 +1,11 @@
-diff -Naur farstream-0.1.2/tests/check/Makefile.am farstream-0.1.2-nemo-tests-install/tests/check/Makefile.am
---- farstream-0.1.2/tests/check/Makefile.am	2011-12-05 20:19:49.000000000 +0000
-+++ farstream-0.1.2-nemo-tests-install/tests/check/Makefile.am	2013-04-30 12:06:20.364110641 +0000
-@@ -173,3 +173,13 @@
- 
- elements_funnel_CFLAGS = $(AM_CFLAGS)
- elements_funnel_SOURCES = elements/funnel.c
+diff --git a/tests/check/Makefile.am b/tests/check/Makefile.am
+index a963967..d786281 100644
+--- a/tests/check/Makefile.am
++++ b/tests/check/Makefile.am
+@@ -165,3 +165,13 @@ utils_binadded_SOURCES = \
+ 	testutils.c \
+ 	testutils.h \
+ 	utils/binadded.c
 +
 +nemotestsbindir = /opt/tests/farstream/bin
 +nobase_nemotestsbin_PROGRAMS = $(check_PROGRAMS)
