@@ -1,5 +1,5 @@
 Name:           farstream
-Version:        0.1.2
+Version:        0.2.7
 Release:        1
 Summary:        Libraries for video conferencing applications
 Group:          System/Libraries
