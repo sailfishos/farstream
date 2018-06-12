@@ -1,5 +1,5 @@
 Name:           farstream
-Version:        0.2.7
+Version:        0.2.8
 Release:        1
 Summary:        Libraries for video conferencing applications
 Group:          System/Libraries
@@ -44,7 +44,7 @@ Testpackage for automated tests with tests and tests.xml
 %__chmod 0755 tests/mktests.sh
 
 %build
-%autogen --disable-python --disable-static --disable-introspection --disable-gtk-doc
+%autogen --disable-static --disable-introspection --disable-gtk-doc
 
 make %{?_smp_mflags}
 tests/mktests.sh > tests/tests.xml
