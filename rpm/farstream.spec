@@ -33,6 +33,14 @@ Requires:       %{name} = %{version}-%{release}
 %description    tests
 Testpackage for automated tests with tests and tests.xml
 
+%package doc
+Summary:   Documentation for %{name}
+Group:     Documentation
+Requires:  %{name} = %{version}-%{release}
+
+%description doc
+%{summary}.
+
 %prep
 %setup -q -n %{name}-%{version}/%{name}
 
@@ -56,13 +64,17 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 install -m 0755 $RPM_SOURCE_DIR/runTest.sh $RPM_BUILD_ROOT/opt/tests/%{name}/bin/runTest.sh
 install -m 0644 tests/tests.xml $RPM_BUILD_ROOT/opt/tests/%{name}/tests.xml
 
+mkdir -p $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
+install -m0644 -t $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version} \
+        NEWS AUTHORS
+
 %post -p /sbin/ldconfig
 
 %postun -p /sbin/ldconfig
 
 %files
 %defattr(-,root,root,-)
-%doc COPYING NEWS AUTHORS
+%license COPYING
 %{_libdir}/*.so.*
 %dir %{_libdir}/%{name}-0.2
 %{_libdir}/%{name}-0.2/*.so
@@ -80,12 +92,15 @@ install -m 0644 tests/tests.xml $RPM_BUILD_ROOT/opt/tests/%{name}/tests.xml
 %{_libdir}/libfarstream-0.2.so
 %{_libdir}/pkgconfig/%{name}-0.2.pc
 %{_includedir}/%{name}-0.2/%{name}/
-%if 0%{?with_docs}
-%{_datadir}/gtk-doc/html/%{name}-libs-0.10/
-%{_datadir}/gtk-doc/html/%{name}-plugins-0.1/
-%endif
 
 %files tests
 %defattr(-,root,root,-)
 /opt/tests/%{name}/*
 
+%files doc
+%defattr(-,root,root,-)
+%{_docdir}/%{name}-%{version}
+%if 0%{?with_docs}
+%{_datadir}/gtk-doc/html/%{name}-libs-0.10/
+%{_datadir}/gtk-doc/html/%{name}-plugins-0.1/
+%endif
