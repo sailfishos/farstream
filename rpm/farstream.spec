@@ -1,15 +1,13 @@
 Name:           farstream
-Version:        0.2.8
+Version:        0.2.9
 Release:        1
 Summary:        Libraries for video conferencing applications
-Group:          System/Libraries
 License:        LGPLv2+
 URL:            http://www.freedesktop.org/wiki/Software/Farstream
 Source0:        http://freedesktop.org/software/farstream/releases/farstream/%{name}-%{version}.tar.gz
 Source1:        runTest.sh
 Source2:        mktests.sh
 Patch0:         nemo-tests-install.patch
-BuildRequires:  python
 BuildRequires:  pkgconfig(nice) >= 0.1.0
 BuildRequires:  pkgconfig(gstreamer-1.0)
 BuildRequires:  pkgconfig(gstreamer-plugins-base-1.0)
@@ -19,7 +17,6 @@ A collection of GStreamer modules and libraries for video conferencing applicati
 
 %package        devel
 Summary:        Development files for video conferencing applications
-Group:          Development/Libraries
 Requires:       %{name} = %{version}-%{release}
 
 %description    devel
@@ -27,7 +24,6 @@ A collection of GStreamer modules and libraries for video conferencing applicati
 
 %package        tests
 Summary:        Tests and tests.xml for %{name}
-Group:          Development/Libraries
 Requires:       %{name} = %{version}-%{release}
 
 %description    tests
@@ -35,17 +31,14 @@ Testpackage for automated tests with tests and tests.xml
 
 %package doc
 Summary:   Documentation for %{name}
-Group:     Documentation
 Requires:  %{name} = %{version}-%{release}
 
 %description doc
 %{summary}.
 
 %prep
-%setup -q -n %{name}-%{version}/%{name}
+%autosetup -p1 -n %{name}-%{version}/%{name}
 
-# nemo-tests-install.patch
-%patch0 -p1
 
 # install the mktests.sh to generate the tests.xml
 %__cp $RPM_SOURCE_DIR/mktests.sh tests/
