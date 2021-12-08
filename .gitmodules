@@ -1,3 +1,3 @@
 [submodule "farstream"]
 	path = farstream
-	url = https://git.sailfishos.org/mirror/farstream.git
+	url = https://github.com/sailfishos-mirror/farstream.git
